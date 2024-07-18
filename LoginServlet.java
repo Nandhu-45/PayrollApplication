@@ -16,6 +16,13 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        
+        if ("user@example.com".equals(email) && "Password123".equals(password)) {
+            response.getWriter().write("Login successful");
+        } else {
+            response.getWriter().write("Login failed");
+        }
+    
 
         String dbUrl = "jdbc:mysql://localhost:3306/payroll";
         String dbUser = "root";
@@ -45,9 +52,5 @@ public class LoginServlet extends HttpServlet {
             e.printStackTrace();
             response.getWriter().write("Error: " + e.getMessage());
         }
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.getWriter().write("GET method is not supported");
     }
 }
