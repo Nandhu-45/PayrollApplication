@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         
-     /* For Inserting the email and Password.It is needed.Here We are fetching the data .so don't want
+     /* For Inserting the email and Password.It is needed.Here We are fetching the data .So don't want
      if ("user@example.com".equals(email) && "Password123".equals(password)) {
             response.getWriter().write("Login successful");
         } else {
